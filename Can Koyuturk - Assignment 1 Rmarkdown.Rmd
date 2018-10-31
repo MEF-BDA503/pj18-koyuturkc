@@ -1,0 +1,32 @@
+---
+title: "Assignment 1 - R Examples"
+author: "Can Koyuturk"
+date: "October 15, 2018"
+output: html_document
+---
+
+About Me
+--------
+I graduated from New York State University and Hacettepe University in 2017. My both majors are Economics. I believe that I have broad knowladge about Economics, Finance, and Accounting. After 1 year from graduation, I came back to Turkey to work at a "Big Four company" which is called PwC as a Tax Consultant. Although I do not have programming background, I decided to start my master degree in this field because technology becomes one of the curicial feature in finance sector,too. In my field, datas grow so fast and I thought that I should learn how to control and use them efficiently. If I succeed this program and learn enough, I am sure that I can contribute my skills to my company in this area, too. My one of the aim is transfering to our tax technology department that is why I joined this master degree.
+
+R Conference
+-------
+The RStudio Conference by David Smith -> "The Voice of the R Community" 
+Basically, the presenter shows the results of a survey that was taken by "Andrie de Vries". The aims of this survey are to learn about how much the users satisfy from "R" and what are the pros and cons of "R". It was taken by almost 4000 survey takers from all around the world. The respondents are mostly from Acedemic sector. After Academic sector, it is suprising that "R" is used in Government at the third level. Finance and Medical sectors follow the Government in this rank. What we can conclude in here that Government, Medical or Finance are the sectors that will never end. So, "R" may contribute their works for many following years or decades. The other main aim of the survey is to learn what people do with "R". 80% of the respondents say that they use "R" to analyze data with existing R packages. The second common respond is writing "R" codes designated to make their work much easier. Other two important questions of the survey are best and worst aspects of working with "R". Community, packages and data are the most favorite best aspects and interestingly packages, data and learning are choosen for the worst aspects. I say interestingly because packages and data seem both best and worst aspects for the users. There is a conflict in here. Consequently, 80% of the respondents are completely satisfied or very satisfied about "R" which is quite high!
+Link : https://www.youtube.com/watch?v=b_wOnvS1WcA&t=903s
+
+Example 1 "R" code Benefits
+-------
+In this example, I found an article about benefits of using "R" which was written the person who made above survey (Andrie de Vries). First of all, as we saw from the video it again mentions that community has an important role to advocate the use of "R" and it is very beneficial to help new users by people who have already used "R". Also, in my opinion, one of the best thing of "R" is it runs in different types of hardware and software like Windows, Mac, or Linux. On the below link, you can see the rest of the article which tells the other benefits of "R."
+Link : https://www.dummies.com/programming/r/the-benefits-of-using-r/
+
+Example 2 "R" helps Governments, too.
+-------
+As, I mentioned above that I know it is not a sector but Government has placed second in the use of "R" amount the other sectors. So, I checked to find an example of a Government that use "R" to specific reason. As we all know that, governments are responsible to share their official statistics with public. As I understand that UK Government should be sick and tired doing this long process manually, they simplified the process by using "R". Once the government create the "R" based process, they will never deal with so much work next years because they have specific standards for the presentation of data. The rest of the source;
+Link : http://blog.revolutionanalytics.com/2017/03/uk-statistics.html
+
+Example 3 Data from Financial Evaluations of Projects (5.2)
+-------
+In this example, I was curious how "R" codes can be used in my field, Finance. When companies invest to a project or deal with a project, they want to know whether it is a beneficial project or now. So, they can learn that they make profit or loss. Also, they can forecast when their investment is paid back. Normally, it is very tough process, If it is long-run project and consists lots of money. However, package "Fincal" makes it simple for us. Below link, there is easy to understand example;
+Link : https://msperlin.github.io/pafdR/Financial-data.html#data-from-financial-markets
+
