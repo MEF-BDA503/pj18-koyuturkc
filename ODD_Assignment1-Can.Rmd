@@ -1,0 +1,80 @@
+---
+title: "odd assignment1"
+author: "Can Koyuturk"
+date: "November 5, 2018"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+install.packages("magrittr") 
+library(magrittr)
+dd <- "plyr"
+install.packages(dd)
+```
+```{r}
+# Create a temporary file
+tmp<-tempfile(fileext=".xlsx")
+# Download file from repository to the temp file
+download.file("https://github.com/MEF-BDA503/pj18-koyuturkc/blob/master/odd_retail_sales_2017_02.xlsx?raw=true",destfile=tmp,mode="wb")
+# Read that excel file using readxl package's read_excel function. You might need to adjust the parameters (skip, col_names) according to your raw file's format.
+raw_data<-readxl::read_excel(tmp,skip=7,col_names=FALSE)
+# Remove the temp file
+file.remove(tmp)
+```
+
+```{r}
+# Remove the last two rows because they are irrelevant (total and empty rows)
+raw_data <- raw_data %>% slice(-c(46,47))
+# Let's see our raw data
+head(raw_data)
+```
+```{r}
+# Use the same column names in your data.
+colnames(raw_data) <- c("brand_name","auto_dom","auto_imp","auto_total","comm_dom","comm_imp","comm_total","total_dom","total_imp","total_total")
+# Now we replace NA values with 0 and label the time period with year and month, so when we merge the data we won't be confused.
+car_data_feb_17 <- raw_data %>% mutate_if(is.numeric,funs(ifelse(is.na(.),0,.))) %>% mutate(year=2017,month=2)
+
+print(car_data_feb_17,width=Inf)
+```
+```{r}
+saveRDS(car_data_feb_17, file = "car_data_feb_17.rds")
+# You can read that file by readRDS and assigning to an object 
+# e.g 
+# rds_data <- readRDS("~/YOUR_OWN_PATH/odd_car_sales_data_feb_17.rds")
+```
+
+```{r}
+#List of total sales of brands with both automobile and commercial vehicle sales ordered in decreasing total sales.
+car_data_feb_17 %>% 
+  filter(auto_total > 0 & comm_total > 0) %>%
+  select(brand_name,total_total) %>%
+  arrange(desc(total_total))
+```
+```{r}
+#Analysis:VOLKSWAGEN has the highest number of sales; on the other hand MERCEDES-BENZ has the lowest sales number
+```
+
+```{r}
+#Calculate the mean of sales numbers 
+car_data_feb_17 %>%
+  summarise(sales_num_mean=mean(total_total),dom_sales_num_maen=mean(total_dom),imp_sales_num_mean=mean(total_imp),com_sales_num_mean=mean(comm_imp),oto_sales_num_mean=mean(auto_imp))
+
+```
+```{r}
+#Analysis: As a result,in 2017,02 customers prefer import cars more than domestic ones.From this import cars, sales of indiviual cars is higher than commercial car sales.
+
+```
+
+```{r}
+#Get the FORD sales numbers, compare commercial and car types.
+car_data_feb_17 %>% 
+  filter(brand_name=='FORD' ) %>% 
+  select(brand_name,(total_total),(total_dom),(total_imp))%>%
+  arrange (desc(sum(total_total)))
+```
+```{r}
+#Analysis:FORD is both an import and dom car, and has 5138 number of sales 2017,02.
+```
+
