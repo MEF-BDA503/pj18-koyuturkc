@@ -6,5 +6,5 @@
 
 **Assignment 2 (Nov 14, 2018)**
  
-[Click here](Can_Koyuturk_-_ODD_Homework1.html)
+[Click here](Can_Koyuturk_-_ODD_Homework1.html) ODD Homework car sales feb_17
 
