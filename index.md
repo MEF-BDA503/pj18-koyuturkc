@@ -6,5 +6,6 @@
 
 **Assignment 2 (Nov 14, 2018)**
  
-[Click here](Can_Koyuturk_-_ODD_Homework1.html) ODD Homework car sales feb_17
+[Click here] For HTML file (Can_Koyuturk_-_ODD_Homework1.html) ODD Homework car sales feb_17
 
+[Click here] For RDS file https://github.com/MEF-BDA503/pj18-koyuturkc/blob/master/car_data_feb_17.rds
